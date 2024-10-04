@@ -19,7 +19,7 @@ const AdminLogin = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.post('http://localhost:5000/api/login', { email, password });
+      const response = await axios.post('https://k-hub.onrender.com/api/login', { email, password });
       if (response.data.success) {
         setOtpSent(true);
       } else {
@@ -37,7 +37,7 @@ const AdminLogin = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.post('http://localhost:5000/api/verify-otp', { email, otp });
+      const response = await axios.post('https://k-hub.onrender.com/api/verify-otp', { email, otp });
       if (response.data.success) {
         localStorage.setItem('isAuthenticated', 'true'); // Set authentication status
         alert('Login successful!');

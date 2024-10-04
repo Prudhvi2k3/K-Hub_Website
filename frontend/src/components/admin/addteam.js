@@ -78,7 +78,7 @@ const AddTeam = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/teams/addTeam', formData, {
+      const response = await axios.post('https://k-hub.onrender.com/api/teams/addTeam', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

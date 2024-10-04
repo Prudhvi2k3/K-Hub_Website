@@ -14,9 +14,9 @@ const Slides = () => {
     const fetchData = async () => {
       try {
         const [achievementsResponse, newsResponse, postersResponse] = await Promise.all([
-          axios.get('http://localhost:5000/api/achievements'),
-          axios.get('http://localhost:5000/api/news'),
-          axios.get('http://localhost:5000/api/posters')
+          axios.get('https://k-hub.onrender.com/api/achievements'),
+          axios.get('https://k-hub.onrender.com/api/news'),
+          axios.get('https://k-hub.onrender.com/api/posters')
         ]);
 
         const data = [];

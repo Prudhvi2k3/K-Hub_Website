@@ -1,6 +1,6 @@
 import React from 'react';
 import './viewhackathons.css'
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://k-hub.onrender.com';
 
 const FullHackathon = ({ hackathon, onBack }) => {
   return (

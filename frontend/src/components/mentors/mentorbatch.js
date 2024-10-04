@@ -12,7 +12,7 @@ const MentorBatch = () => {
 
   const fetchBatches = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/batches');
+      const response = await axios.get('https://k-hub.onrender.com/api/batches');
       setBatches(response.data);
     } catch (error) {
       console.error('Error fetching batches:', error);

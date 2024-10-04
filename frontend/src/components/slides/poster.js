@@ -14,7 +14,7 @@ function AddPoster({ onPosterAdded }) {
     formData.append('poster', file);
 
     try {
-      await axios.post('http://localhost:5000/api/posters', formData, {
+      await axios.post('https://k-hub.onrender.com/api/posters', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert('Poster uploaded successfully');

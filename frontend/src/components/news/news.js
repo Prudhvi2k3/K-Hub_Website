@@ -44,7 +44,7 @@ const AddNews = () => {
       console.log('Sending items:', itemsForJson);
       console.log('FormData entries:', [...formData.entries()]);
 
-      const response = await axios.post('http://localhost:5000/news', formData, {
+      const response = await axios.post('https://k-hub.onrender.com/news', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       console.log('Server response:', response.data);

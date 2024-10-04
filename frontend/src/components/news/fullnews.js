@@ -11,7 +11,7 @@ const FullNewsletter = () => {
   useEffect(() => {
     const fetchNewsletter = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/news/${id}`);
+        const response = await axios.get(`https://k-hub.onrender.com/api/news/${id}`);
         setNewsletter(response.data);
       } catch (error) {
         console.error('Error fetching newsletter:', error);

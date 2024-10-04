@@ -20,7 +20,7 @@ const AddMember = () => {
 
   const fetchLatestBatch = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/teams/batches/latest');
+      const response = await axios.get('https://k-hub.onrender.com/api/teams/batches/latest');
       setLatestBatch(response.data);
     } catch (error) {
       console.error('Error fetching latest batch:', error);
@@ -51,7 +51,7 @@ const AddMember = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/teams/${latestBatch.batchNumber}/${selectedTeam}/member`, 
+        `https://k-hub.onrender.com/api/teams/${latestBatch.batchNumber}/${selectedTeam}/member`, 
         formData,
         {
           headers: {

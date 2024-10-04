@@ -12,7 +12,7 @@ const ViewProjects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/projects/batch-numbers')
+    axios.get('https://k-hub.onrender.com/api/projects/batch-numbers')
       .then(response => {
         setBatchNumbers(response.data);
       })
@@ -20,7 +20,7 @@ const ViewProjects = () => {
         console.error('Error fetching batch numbers:', error);
       });
 
-    axios.get('http://localhost:5000/api/projects/team-numbers')
+    axios.get('https://k-hub.onrender.com/api/projects/team-numbers')
       .then(response => {
         setTeamNumbers(response.data);
       })
@@ -31,7 +31,7 @@ const ViewProjects = () => {
 
   useEffect(() => {
     if (selectedBatch !== '' || selectedTeam !== '') {
-      axios.get(`http://localhost:5000/api/projects?batchNumber=${selectedBatch}&teamNumber=${selectedTeam}`)
+      axios.get(`https://k-hub.onrender.com/api/projects?batchNumber=${selectedBatch}&teamNumber=${selectedTeam}`)
         .then(response => {
           setProjects(response.data);
         })

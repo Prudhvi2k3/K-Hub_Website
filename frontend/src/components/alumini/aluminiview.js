@@ -14,7 +14,7 @@ const AlumniView = () => {
 
   const fetchAlumni = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/alumni/batch/${batchNumber}`);
+      const response = await axios.get(`https://k-hub.onrender.com/api/alumni/batch/${batchNumber}`);
       setAlumni(response.data);
       setLoading(false);
     } catch (error) {

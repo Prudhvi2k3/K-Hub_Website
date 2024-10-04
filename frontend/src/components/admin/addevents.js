@@ -44,7 +44,7 @@ const AddEvent = () => {
     });
 
     try {
-      const response = await axios.post('http://localhost:5000/api/events/add', formData, {
+      const response = await axios.post('https://k-hub.onrender.com/api/events/add', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

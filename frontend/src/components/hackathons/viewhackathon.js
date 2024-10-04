@@ -3,7 +3,7 @@ import axios from 'axios';
 import './viewhackathons.css';
 import FullHackathon from './fullhackathon';
 
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://k-hub.onrender.com';
 
 const ViewHackathon = () => {
   const [hackathons, setHackathons] = useState([]);

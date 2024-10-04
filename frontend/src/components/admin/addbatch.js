@@ -17,7 +17,7 @@ const AddBatch = () => {
 
   const fetchAllBatches = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/teams/batches');
+      const response = await axios.get('https://k-hub.onrender.com/api/teams/batches');
       setAllBatches(response.data);
     } catch (error) {
       console.error('Error fetching batches:', error);
@@ -122,7 +122,7 @@ const AddBatch = () => {
     });
 
     try {
-      const response = await axios.post('http://localhost:5000/api/teams/batch', formData, {
+      const response = await axios.post('https://k-hub.onrender.com/api/teams/batch', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

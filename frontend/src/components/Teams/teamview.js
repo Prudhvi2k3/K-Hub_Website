@@ -13,7 +13,7 @@ const TeamView = () => {
 
   const fetchTeamDetails = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/teams/batches/latest');
+      const response = await axios.get('https://k-hub.onrender.com/api/teams/batches/latest');
       setTeam(response.data.teams[teamIndex]);
     } catch (error) {
       console.error('Error fetching team details:', error);

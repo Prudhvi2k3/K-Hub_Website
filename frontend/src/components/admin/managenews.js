@@ -16,7 +16,7 @@ const ManageNews = () => {
 
   const fetchNews = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/news');
+      const response = await axios.get('https://k-hub.onrender.com/api/news');
       setAllNews(response.data);
     } catch (error) {
       console.error('Error fetching news:', error);
@@ -37,7 +37,7 @@ const ManageNews = () => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this news item?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/news/${selectedNews._id}`);
+        await axios.delete(`https://k-hub.onrender.com/api/news/${selectedNews._id}`);
         fetchNews();
         setSelectedNews(null);
       } catch (error) {
@@ -72,7 +72,7 @@ const ManageNews = () => {
         }
       });
 
-      await axios.put(`http://localhost:5000/api/news/${editedNews._id}`, formData, {
+      await axios.put(`https://k-hub.onrender.com/api/news/${editedNews._id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

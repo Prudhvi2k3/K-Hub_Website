@@ -13,7 +13,7 @@ const ManageProjects = () => {
 
   useEffect(() => {
     // Fetch batch numbers
-    axios.get('http://localhost:5000/api/projects/batch-numbers')
+    axios.get('https://k-hub.onrender.com/api/projects/batch-numbers')
       .then(response => {
         setBatchNumbers(response.data);
       })
@@ -22,7 +22,7 @@ const ManageProjects = () => {
       });
 
     // Fetch team numbers
-    axios.get('http://localhost:5000/api/projects/team-numbers')
+    axios.get('https://k-hub.onrender.com/api/projects/team-numbers')
       .then(response => {
         setTeamNumbers(response.data);
       })
@@ -34,7 +34,7 @@ const ManageProjects = () => {
   useEffect(() => {
     // Fetch projects based on selected batch and team
     if (selectedBatch !== '' || selectedTeam !== '') {
-      axios.get(`http://localhost:5000/api/projects?batchNumber=${selectedBatch}&teamNumber=${selectedTeam}`)
+      axios.get(`https://k-hub.onrender.com/api/projects?batchNumber=${selectedBatch}&teamNumber=${selectedTeam}`)
         .then(response => {
           setProjects(response.data);
         })
@@ -65,7 +65,7 @@ const ManageProjects = () => {
       formData.append('previewImage', editedImages[project._id]);
     }
 
-    axios.put(`http://localhost:5000/api/projects/${project._id}`, formData, {
+    axios.put(`https://k-hub.onrender.com/api/projects/${project._id}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -81,7 +81,7 @@ const ManageProjects = () => {
   };
 
   const handleDelete = (projectId) => {
-    axios.delete(`http://localhost:5000/api/projects/${projectId}`)
+    axios.delete(`https://k-hub.onrender.com/api/projects/${projectId}`)
       .then(() => {
         setProjects(projects.filter(project => project._id !== projectId));
       })

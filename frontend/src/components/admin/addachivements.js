@@ -27,7 +27,7 @@ const AddAchievement = () => {
       formData.append('description', description);
 
       // Send POST request to backend
-      const response = await axios.post('http://localhost:5000/api/achievements/add', formData, {
+      const response = await axios.post('https://k-hub.onrender.com/api/achievements/add', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

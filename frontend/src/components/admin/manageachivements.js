@@ -10,7 +10,7 @@ const ManageAchievement = () => {
   // Function to fetch achievements from the backend
   const fetchAchievements = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/achievements');
+      const response = await axios.get('https://k-hub.onrender.com/api/achievements');
       setAchievements(response.data);
     } catch (error) {
       setError(error.message);
@@ -42,7 +42,7 @@ const ManageAchievement = () => {
 
     try {
       // Send update request to backend
-      const response = await axios.put(`http://localhost:5000/api/achievements/${id}`, formData, {
+      const response = await axios.put(`https://k-hub.onrender.com/api/achievements/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -88,7 +88,7 @@ const ManageAchievement = () => {
   // Delete an achievement
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/achievements/${id}`);
+      await axios.delete(`https://k-hub.onrender.com/api/achievements/${id}`);
       setAchievements(achievements.filter((achievement) => achievement._id !== id));
       console.log(`Deleted achievement with ID: ${id}`);
     } catch (error) {

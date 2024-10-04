@@ -13,7 +13,7 @@ const EventManager = () => {
 
     const fetchEvents = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/events');
+            const response = await axios.get('https://k-hub.onrender.com/api/events');
             setEvents(response.data);
         } catch (error) {
             console.error('Error fetching events:', error);
@@ -22,7 +22,7 @@ const EventManager = () => {
 
     const handleEventClick = async (eventId) => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/events/${eventId}`);
+            const response = await axios.get(`https://k-hub.onrender.com/api/events/${eventId}`);
             setSelectedEvent(response.data);
         } catch (error) {
             console.error('Error fetching event details:', error);
@@ -31,7 +31,7 @@ const EventManager = () => {
 
     const handleDeleteEvent = async (eventId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/events/${eventId}`);
+            await axios.delete(`https://k-hub.onrender.com/api/events/${eventId}`);
             fetchEvents();
             setSelectedEvent(null);
         } catch (error) {
@@ -41,8 +41,8 @@ const EventManager = () => {
 
     const handleDeleteSubEvent = async (eventId, subEventId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/events/${eventId}/subevents/${subEventId}`);
-            const updatedEventResponse = await axios.get(`http://localhost:5000/api/events/${eventId}`);
+            await axios.delete(`https://k-hub.onrender.com/api/events/${eventId}/subevents/${subEventId}`);
+            const updatedEventResponse = await axios.get(`https://k-hub.onrender.com/api/events/${eventId}`);
             setSelectedEvent(updatedEventResponse.data);
             fetchEvents();
         } catch (error) {
@@ -52,8 +52,8 @@ const EventManager = () => {
 
     const handleDeleteImage = async (eventId, subEventId, imageId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/events/${eventId}/subevents/${subEventId}/images/${imageId}`);
-            const updatedEventResponse = await axios.get(`http://localhost:5000/api/events/${eventId}`);
+            await axios.delete(`https://k-hub.onrender.com/api/events/${eventId}/subevents/${subEventId}/images/${imageId}`);
+            const updatedEventResponse = await axios.get(`https://k-hub.onrender.com/api/events/${eventId}`);
             setSelectedEvent(updatedEventResponse.data);
             fetchEvents();
         } catch (error) {
@@ -70,7 +70,7 @@ const EventManager = () => {
                 formData.append('coverImage', updatedData.coverImage);
             }
 
-            const response = await axios.put(`http://localhost:5000/api/events/${eventId}`, formData, {
+            const response = await axios.put(`https://k-hub.onrender.com/api/events/${eventId}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -95,7 +95,7 @@ const EventManager = () => {
                 });
             }
 
-            const response = await axios.put(`http://localhost:5000/api/events/${eventId}/subevents/${subEventId}`, formData, {
+            const response = await axios.put(`https://k-hub.onrender.com/api/events/${eventId}/subevents/${subEventId}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
