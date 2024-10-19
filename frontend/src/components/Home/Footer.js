@@ -21,8 +21,8 @@ function Footer() {
         <div className="footer-logo">
           <img src='bulbpic.png' alt="KIET Logo" className="animated-logo" />
           
-          <h4>KIET GROUP OF INSTITUTIONS</h4><br></br>
-          <p>BLOCK-B,GROUND FLOOR MAIN CAMPUS</p>
+          <h4> KIET GROUP OF INSTITUTIONS <br />
+        BLOCK-B,GROUND FLOOR MAIN CAMPUS </h4>
           </div>
         <div>
           <ul className="footer-links">
