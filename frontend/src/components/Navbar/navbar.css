@@ -29,17 +29,6 @@
     width: auto;
 }
 
-@media (min-width: 1024px) {
-    .navbar-logo {
-        height: 70px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar-logo {
-        height: 50px;
-    }
-}
 
 /* Navbar Menu Styles */
 .navbar-menu {
@@ -100,7 +89,7 @@
 
 /* Toggle Bar Animations for Open State */
 #checkbox:checked + .toggle #bar2 {
-    transform: translateY(14px) rotate(60deg);
+    transform: translateY(11px) rotate(60deg);
     margin-left: 0;
     transform-origin: right;
     transition-duration: .3s;
@@ -108,7 +97,7 @@
 }
 
 #checkbox:checked + .toggle #bar1 {
-    transform: translateY(28px) rotate(-60deg);
+    transform: translateY(19px) rotate(-60deg);
     transition-duration: .3s;
     transform-origin: left;
     z-index: 1;
@@ -119,33 +108,7 @@
 }
 
 /* Mobile and Tablet View */
-@media (max-width: 1020px) {
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        background-color: #053c77;
-        position: absolute;
-        top: 70px;
-        right: 0; /* Position the sidebar on the right side */
-        margin-right: 0; /* Ensure no margin on the right side */
-    }
 
-    .navbar-menu.open {
-        display: flex;
-    }
-
-    .toggle {
-        display: flex;
-    }
-}
-
-@media (min-width: 1020px) {
-    .toggle {
-        display: none;
-    }
-}
 
 /* Dropdown Container */
 .dropdown {
@@ -187,3 +150,58 @@
 .dropdown:hover .dropdown-content {
     display: flex;
 }
+@media (min-width: 1024px) {
+    .navbar-logo {
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-logo {
+        height: 50px;
+    }
+}
+
+/* Mobile and Tablet View */
+@media (max-width: 1020px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        height: 100vh; /* Full height */
+        background-color: #053c77;
+        position: fixed; /* Fixed position for overlay */
+        top: 70px; /* Below the navbar */
+        right: 0;
+        margin-right: 0;
+        padding: 20px;
+        z-index: 999; /* Ensure it's on top */
+    }
+
+    .navbar-menu.open {
+        display: flex; /* Show when open */
+    }
+
+    .toggle {
+        display: flex; /* Show toggle button on mobile */
+    }
+}
+
+@media (min-width: 1020px) {
+    .toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+}
+
+/* Show Dropdown on Mobile */
+@media (max-width: 1020px) {
+    .dropdown:hover .dropdown-content {
+        display: none; /* Prevent hover from showing dropdown on mobile */
+    }
+    .dropdown-content {
+        display: flex; /* Show dropdown content when clicked */
+        flex-direction: column;
+    }
+}
+
