@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
 import './teamview.css';
 
 const TeamView = () => {
   const [team, setTeam] = useState(null);
   const { teamIndex } = useParams();
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     fetchTeamDetails();
@@ -13,11 +14,19 @@ const TeamView = () => {
 
   const fetchTeamDetails = async () => {
     try {
-      const response = await axios.get('https://k-hub.onrender.com/api/teams/batches/latest');
-      setTeam(response.data.teams[teamIndex]);
+      const response = await axios.get('http://localhost:5000/api/batches');
+      const allBatches = response.data;
+      if (allBatches.length > 0) {
+        const latestBatch = allBatches[0];
+        setTeam(latestBatch.teams[teamIndex]);
+      }
     } catch (error) {
       console.error('Error fetching team details:', error);
     }
+  };
+
+  const handleBackButtonClick = () => {
+    navigate('/teams'); // Navigate to /teams on button click
   };
 
   if (!team) {
@@ -36,12 +45,7 @@ const TeamView = () => {
       <div className="teamview-card-content">
         <h3>{member.name}</h3>
         <p><strong>Role:</strong> {role}</p>
-        {/* <p><strong>Subteam:</strong> {member.subteam}</p> */}
-        {/* {member.git && <p><strong>GitHub:</strong> <a href={member.git} target="_blank" rel="noopener noreferrer">{member.git}</a></p>} */}
-        {/* {member.linkedin && <p><strong>LinkedIn:</strong> <a href={member.linkedin} target="_blank" rel="noopener noreferrer">{member.linkedin}</a></p>} */}
         <div className="teamview-social-icons">
-          {member.twitter && <a href={member.twitter} target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>}
-          {member.instagram && <a href={member.instagram} target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>}
           {member.git && <a href={member.git} target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>}
           {member.linkedin && <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>}
         </div>
@@ -51,7 +55,6 @@ const TeamView = () => {
 
   const renderPairs = (seniorDevelopers, juniorDevelopers) => {
     const pairs = [];
-
     seniorDevelopers.forEach((senior) => {
       const junior = juniorDevelopers.find(junior => junior.subteam === senior.subteam);
       pairs.push(
@@ -61,7 +64,6 @@ const TeamView = () => {
         </div>
       );
     });
-
     return pairs;
   };
 
@@ -70,6 +72,7 @@ const TeamView = () => {
 
   return (
     <div className="teamview-container">
+      <button onClick={handleBackButtonClick} className="back-button">Back to Teams</button> {/* Back button */}
       <h2>Team {parseInt(teamIndex) + 1} Details</h2>
       <div className="teamview-section teamview-side-by-side">
         <div>
