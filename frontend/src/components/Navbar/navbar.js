@@ -12,6 +12,10 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false); // Close the sidebar on link click
+  };
+
   const toggleEventsDropdown = () => {
     setEventsDropdownOpen(!eventsDropdownOpen);
   };
@@ -34,30 +38,34 @@ const Navbar = () => {
         <div id="bar3" className="bars"></div>
       </label>
       <div className={`navbar-menu ${menuOpen ? 'open' : ''}`}>
-        <Link to="/"><FaHome className="nav-icon" />Home</Link>
+        <Link to="/" onClick={closeMenu}><FaHome className="nav-icon" />Home</Link>
         <div className="dropdown" onMouseEnter={toggleEventsDropdown} onMouseLeave={toggleEventsDropdown}>
-  <div className="nav-link">
-    <FaCalendarAlt className="nav-icon" /> <span className="nav-text">Events</span>
-  </div>
-  <div className={`dropdown-content ${eventsDropdownOpen ? 'show' : ''}`}>
-    <Link to="/viewhackathon"><FaTasks className="nav-icon" />Hackathon</Link>
-    <Link to="/events"><FaCalendarAlt className="nav-icon" />Events</Link>
-    <Link to="/news"><FaNewspaper className="nav-icon" />News</Link>
-  </div>
-</div>
-
-        <Link to="/viewproject"><FaProjectDiagram className="nav-icon" />Projects</Link>
-        <Link to="/viewachivements"><FaTrophy className="nav-icon" />Achievements</Link>
-        <div className="dropdown" onMouseEnter={toggleTeamDropdown} onMouseLeave={toggleTeamDropdown}>
-          <Link to="/teams" className="nav-link"><FaUsers className="nav-icon" />Team</Link>
-          <div className={`dropdown-content ${teamDropdownOpen ? 'show' : ''}`}>
-            <Link to="/aluminibatch">Alumni</Link>
-            <Link to="/mentorbatch">Mentors</Link>
-            <Link to="/teams">Current Batch</Link>
-            <Link to="/teams/previous">Previous Batch</Link>
+          <div className="nav-link">
+            <FaCalendarAlt className="nav-icon" /> <span className="nav-text">Events</span>
+          </div>
+          <div className={`dropdown-content ${eventsDropdownOpen ? 'show' : ''}`}>
+            <Link to="/viewhackathon" onClick={closeMenu}><FaTasks className="nav-icon" />Hackathon</Link>
+            <Link to="/events" onClick={closeMenu}><FaCalendarAlt className="nav-icon" />Events</Link>
+            <Link to="/news" onClick={closeMenu}><FaNewspaper className="nav-icon" />News</Link>
           </div>
         </div>
-        <Link to="/contactus"><FaEnvelope className="nav-icon" />ContactUs</Link>
+
+        <Link to="/viewproject" onClick={closeMenu}><FaProjectDiagram className="nav-icon" />Projects</Link>
+        <Link to="/viewachivements" onClick={closeMenu}><FaTrophy className="nav-icon" />Achievements</Link>
+
+        <div className="dropdown" onMouseEnter={toggleTeamDropdown} onMouseLeave={toggleTeamDropdown}>
+          <div className="nav-link">
+            <FaUsers className="nav-icon" /> <span className="nav-text">Team</span>
+          </div>
+          <div className={`dropdown-content ${teamDropdownOpen ? 'show' : ''}`}>
+            <Link to="/aluminibatch" onClick={closeMenu}>Alumni</Link>
+            <Link to="/mentorbatch" onClick={closeMenu}>Mentors</Link>
+            <Link to="/teams" onClick={closeMenu}>Current Batch</Link>
+            <Link to="/teams/previous" onClick={closeMenu}>Previous Batch</Link>
+          </div>
+        </div>
+
+        <Link to="/contactus" onClick={closeMenu}><FaEnvelope className="nav-icon" />Contact Us</Link>
       </div>
     </nav>
   );
