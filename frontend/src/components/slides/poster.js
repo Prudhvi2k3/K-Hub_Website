@@ -14,7 +14,7 @@ function AddPoster({ onPosterAdded }) {
     formData.append('poster', file);
 
     try {
-      await axios.post('https://k-hub.onrender.com/api/posters', formData, {
+      await axios.post('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/posters', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert('Poster uploaded successfully');

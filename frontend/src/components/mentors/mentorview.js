@@ -14,7 +14,7 @@ const MentorView = () => {
 
   const fetchMentors = async () => {
     try {
-      const response = await axios.get(`https://k-hub.onrender.com/api/mentors/batch/${batchNumber}`);
+      const response = await axios.get(`https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/mentors/batch/${batchNumber}`);
       setMentors(response.data);
       setLoading(false);
     } catch (error) {

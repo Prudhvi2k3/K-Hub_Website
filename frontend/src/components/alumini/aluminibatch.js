@@ -12,7 +12,7 @@ const BatchView = () => {
 
   const fetchBatches = async () => {
     try {
-      const response = await axios.get('https://k-hub.onrender.com/api/batches');
+      const response = await axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/batches');
       setBatches(response.data);
     } catch (error) {
       console.error('Error fetching batches:', error);

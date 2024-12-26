@@ -14,9 +14,9 @@ const Slides = () => {
     const fetchData = async () => {
       try {
         const [achievementsResponse, newsResponse, postersResponse] = await Promise.all([
-          axios.get('https://k-hub.onrender.com/api/achievements'),
-          axios.get('https://k-hub.onrender.com/api/news'),
-          axios.get('https://k-hub.onrender.com/api/posters')
+          axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/achievements'),
+          axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/news'),
+          axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/posters')
         ]);
 
         const data = [];

@@ -9,7 +9,7 @@ const ViewEvent = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('https://k-hub.onrender.com/api/events');
+        const response = await axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/events');
         setEvents(response.data);
       } catch (error) {
         console.error('Error fetching events:', error);

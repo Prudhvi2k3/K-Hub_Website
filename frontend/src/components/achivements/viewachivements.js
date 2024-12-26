@@ -13,7 +13,7 @@ const ViewAchievement = () => {
   useEffect(() => {
     const fetchAchievements = async () => {
       try {
-        const response = await axios.get('https://k-hub.onrender.com/api/achievements');
+        const response = await axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/achievements');
         setAchievements(response.data);
       } catch (error) {
         setError(error.message);

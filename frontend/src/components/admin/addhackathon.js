@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './addhackathons.css';
 
-const BACKEND_URL = 'https://k-hub.onrender.com';
+const BACKEND_URL = 'https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app';
 
 const AddHackathon = () => {
   const [hackathon, setHackathon] = useState({

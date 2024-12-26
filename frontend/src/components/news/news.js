@@ -44,7 +44,7 @@ const AddNews = () => {
       console.log('Sending items:', itemsForJson);
       console.log('FormData entries:', [...formData.entries()]);
 
-      const response = await axios.post('https://k-hub.onrender.com/news', formData, {
+      const response = await axios.post('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/news', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       console.log('Server response:', response.data);

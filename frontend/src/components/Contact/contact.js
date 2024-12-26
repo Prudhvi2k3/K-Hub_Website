@@ -24,7 +24,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://k-hub.onrender.com/api/contact', {
+      const response = await fetch('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

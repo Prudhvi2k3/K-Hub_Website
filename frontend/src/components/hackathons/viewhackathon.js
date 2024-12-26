@@ -3,7 +3,7 @@ import axios from 'axios';
 import './viewhackathons.css';
 import FullHackathon from './fullhackathon';
 
-const BACKEND_URL = 'https://k-hub.onrender.com';
+const BACKEND_URL = 'https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app';
 
 const ViewHackathon = () => {
   const [hackathons, setHackathons] = useState([]);

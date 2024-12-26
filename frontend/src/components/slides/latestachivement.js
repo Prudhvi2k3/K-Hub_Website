@@ -9,7 +9,7 @@ const LatestAchievement = () => {
   useEffect(() => {
     const fetchAchievements = async () => {
       try {
-        const response = await axios.get('https://k-hub.onrender.com/api/achievements');
+        const response = await axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/achievements');
         if (response.data.length > 0) {
           // Assuming the latest achievement is the last item in the array
           setLatestAchievement(response.data[response.data.length - 1]);

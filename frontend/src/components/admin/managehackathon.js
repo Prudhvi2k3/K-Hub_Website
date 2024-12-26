@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const BACKEND_URL = 'https://k-hub.onrender.com';
+const BACKEND_URL = 'https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app';
 
 const ManageHackathon = () => {
   const [hackathons, setHackathons] = useState([]);

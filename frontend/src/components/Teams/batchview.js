@@ -12,7 +12,7 @@ const BatchView = () => {
 
   const fetchLatestBatch = async () => {
     try {
-      const response = await axios.get('https://k-hub.onrender.com/api/teams/batches/latest');
+      const response = await axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/teams/batches/latest');
       setLatestBatch(response.data);
     } catch (error) {
       console.error('Error fetching latest batch:', error);

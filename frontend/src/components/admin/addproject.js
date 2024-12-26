@@ -34,7 +34,7 @@ const AddProject = () => {
     }
 
     try {
-      const response = await axios.post('https://k-hub.onrender.com/api/projects/add', formData, {
+      const response = await axios.post('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/projects/add', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

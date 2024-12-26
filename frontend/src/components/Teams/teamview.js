@@ -14,7 +14,7 @@ const TeamView = () => {
 
   const fetchTeamDetails = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/batches');
+      const response = await axios.get('https://k-hub-website-fywagmopb-prudhvis-projects-a7c78c11.vercel.app/api/batches');
       const allBatches = response.data;
       if (allBatches.length > 0) {
         const latestBatch = allBatches[0];
